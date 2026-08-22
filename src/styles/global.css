@@ -37,6 +37,11 @@ footer {
   @apply py-5 text-sm;
 }
 
+.skip-link {
+  @apply fixed left-4 top-4 z-[60] -translate-y-20 rounded-md bg-stone-900 px-3 py-2 text-sm text-white;
+  @apply focus:translate-y-0 dark:bg-stone-100 dark:text-black;
+}
+
 article {
   @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold prose-p:font-serif;
@@ -62,6 +67,12 @@ article {
 
 .animate.show {
   @apply opacity-100 translate-y-0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    @apply opacity-100 translate-y-0 transition-none;
+  }
 }
 
 html #back-to-top {
