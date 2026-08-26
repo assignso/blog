@@ -2,6 +2,12 @@
 
 The Astro source for [blog.assign.so](https://blog.assign.so). The blog is a static GitHub Pages site; canonical editorial content stays in the private [`assignso/posts`](https://github.com/assignso/posts) repository and is checked out during each build.
 
+The site also owns a small product changelog at `/changelog`. Its concise,
+dated entries live in `content/changelog/` and begin only after a
+verified production deployment of `assign-web@1.0.0`. The changelog summarizes
+released user-visible improvements; it does not replace release records, public
+documentation, or the compatibility changelog in `architecture`.
+
 ## Content sources
 
 Astro loads Markdown and MDX matching `content/sources/**/posts/**/*.{md,mdx}`. The repository includes one local starter post under `content/sources/blog/posts/`. CI checks out `assignso/posts` at `content/sources/posts`, so files anywhere in that repository become part of the same collection.

@@ -24,4 +24,21 @@ const posts = defineCollection({
   }),
 });
 
-export const collections = { posts };
+const changelog = defineCollection({
+  loader: glob({
+    base: "./content/changelog",
+    pattern: ["**/*.{md,mdx}", "!README.md"],
+  }),
+  schema: z.object({
+    title: z.string().min(1).max(100),
+    summary: z.string().min(1).max(360),
+    date: z.coerce.date(),
+    draft: z.boolean().default(false),
+    link: z.object({
+      label: z.string().min(1).max(60),
+      href: z.string().url(),
+    }).optional(),
+  }),
+});
+
+export const collections = { posts, changelog };

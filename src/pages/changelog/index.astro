@@ -1,0 +1,54 @@
+---
+import Container from "@components/Container.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import Link from "@components/Link.astro";
+import { CHANGELOG } from "@consts";
+import PageLayout from "@layouts/PageLayout.astro";
+import { getPublishedProductUpdates } from "@lib/changelog";
+
+const updates = await getPublishedProductUpdates();
+---
+
+<PageLayout title={CHANGELOG.TITLE} description={CHANGELOG.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <header class="animate space-y-3">
+        <h1 class="text-2xl font-semibold text-black dark:text-white">
+          Product changelog
+        </h1>
+        <p class="max-w-2xl">
+          Short, dated notes about meaningful improvements that are available in Assign.
+        </p>
+      </header>
+
+      {updates.length > 0 ? (
+        <ol class="space-y-8">
+          {updates.map((update) => (
+            <li class="animate grid gap-2 border-t border-black/10 pt-5 dark:border-white/10 sm:grid-cols-[9rem_1fr] sm:gap-6">
+              <p class="text-sm text-black/45 dark:text-white/55">
+                <FormattedDate date={update.data.date} />
+              </p>
+              <article class="space-y-2">
+                <h2 class="text-base font-semibold text-black dark:text-white">
+                  {update.data.title}
+                </h2>
+                <p>{update.data.summary}</p>
+                {update.data.link && (
+                  <p>
+                    <Link href={update.data.link.href} external>
+                      {update.data.link.label}
+                    </Link>
+                  </p>
+                )}
+              </article>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <p class="animate rounded-lg border border-black/10 p-5 dark:border-white/10">
+          Product updates will begin after Assign Web 1.0.0 reaches production.
+        </p>
+      )}
+    </div>
+  </Container>
+</PageLayout>

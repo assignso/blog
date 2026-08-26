@@ -18,6 +18,11 @@ export const BLOG: Metadata = {
   DESCRIPTION: "Product updates, engineering notes, and practical ideas from Assign.",
 };
 
+export const CHANGELOG: Metadata = {
+  TITLE: "Product changelog",
+  DESCRIPTION: "Short, dated notes about meaningful improvements available in Assign.",
+};
+
 export const WORK: Metadata = {
   TITLE: "Work",
   DESCRIPTION: "Where I have worked and what I have done.",
