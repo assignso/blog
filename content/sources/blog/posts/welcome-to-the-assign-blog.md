@@ -10,8 +10,10 @@ author: Assign team
 draft: false
 ---
 
-Assign is a project management tool built around a simple idea: work should be easy to understand and progress should be easy to make.
+A product decision becomes more useful when you can follow the reasoning behind it. What problem did it address? What did the team choose, and what does that choice cost?
 
-This blog is where we will share what changes in the product, what we learn while building it, and the engineering decisions that may be useful to other teams. Expect a mix of product updates, practical technical articles, and occasional deeper looks at how Assign is taking shape.
+This blog is where we will work through those questions as we build Assign, a project management tool for making work easier to understand and progress easier to make. The engineering articles will explain decisions and practical techniques that other teams can use. Product updates will describe what changes, and occasional longer pieces will explore how Assign is taking shape.
+
+An article should be worth reading even if you never use the product. Expect explanations with concrete examples and room for the tradeoffs that a short announcement cannot cover.
 
 For the product itself, visit [assign.so](https://assign.so).
