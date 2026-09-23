@@ -7,8 +7,15 @@ import { SITE } from "@consts";
 <header>
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href="/" underline={false}>
-        <div class="font-semibold">
+      <Link href="/" underline={false} aria-label="Assign Blog home">
+        <div class="flex items-center gap-2 font-semibold tracking-tight">
+          <img
+            src="/brand/assign-logo-rounded.svg"
+            alt=""
+            width="20"
+            height="20"
+            class="size-5"
+          />
           {SITE.NAME}
         </div>
       </Link>

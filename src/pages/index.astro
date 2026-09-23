@@ -12,14 +12,14 @@ const posts = (await getPublishedPosts()).slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <h1 class="animate text-2xl font-semibold text-black dark:text-white">
+    <h1 class="animate text-2xl font-semibold text-foreground text-balance">
       Ideas for making progress
     </h1>
     <div class="space-y-16">
       <section>
         <article class="space-y-4">
           <p class="animate">
-            Product updates, engineering notes, and practical lessons from the team building
+            Product updates, engineering notes, and practical lessons from the team building{" "}
             <Link href="https://assign.so" aria-label="Visit Assign" external>Assign</Link>.
           </p>
           <p class="animate">
@@ -31,7 +31,7 @@ const posts = (await getPublishedPosts()).slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h2 class="font-semibold text-black dark:text-white">
+          <h2 class="font-semibold text-foreground">
             Latest posts
           </h2>
           <Link href="/blog">

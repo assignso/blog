@@ -58,7 +58,7 @@ export function createCookieConsentConfig(): CookieConsent.CookieConsentConfig {
       consentModal: {
         layout: "cloud inline",
         position: "bottom center",
-        equalWeightButtons: true,
+        equalWeightButtons: false,
         flipButtons: false,
       },
       preferencesModal: {

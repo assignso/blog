@@ -13,7 +13,7 @@ const updates = await getPublishedProductUpdates();
   <Container>
     <div class="space-y-10">
       <header class="animate space-y-3">
-        <h1 class="text-2xl font-semibold text-black dark:text-white">
+        <h1 class="text-2xl font-semibold text-foreground text-balance">
           Product changelog
         </h1>
         <p class="max-w-2xl">
@@ -24,12 +24,12 @@ const updates = await getPublishedProductUpdates();
       {updates.length > 0 ? (
         <ol class="space-y-8">
           {updates.map((update) => (
-            <li class="animate grid gap-2 border-t border-black/10 pt-5 dark:border-white/10 sm:grid-cols-[9rem_1fr] sm:gap-6">
-              <p class="text-sm text-black/45 dark:text-white/55">
+            <li class="animate grid gap-2 border-t border-border pt-5 sm:grid-cols-[9rem_1fr] sm:gap-6">
+              <p class="text-sm text-muted-foreground">
                 <FormattedDate date={update.data.date} />
               </p>
               <article class="space-y-2">
-                <h2 class="text-base font-semibold text-black dark:text-white">
+                <h2 class="text-base font-semibold text-foreground">
                   {update.data.title}
                 </h2>
                 <p>{update.data.summary}</p>
@@ -45,7 +45,7 @@ const updates = await getPublishedProductUpdates();
           ))}
         </ol>
       ) : (
-        <p class="animate rounded-lg border border-black/10 p-5 dark:border-white/10">
+        <p class="animate rounded-lg border border-border p-5">
           Product updates will begin after Assign Web 1.0.0 reaches production.
         </p>
       )}

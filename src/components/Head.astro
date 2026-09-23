@@ -1,14 +1,11 @@
 ---
 import "../styles/global.css";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
+import "../styles/cookie-consent.css";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-600.css";
-import "@fontsource/lora/400.css";
-import "@fontsource/lora/600.css";
 import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
 import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2";
-import lora400 from "@fontsource/lora/files/lora-latin-400-normal.woff2";
-import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
 
 import { ClientRouter } from "astro:transitions";
 import { SITE } from "@consts";
@@ -35,8 +32,6 @@ const { title, description, image = "/favicon-light.svg" } = Astro.props;
 <!-- Font preloads -->
 <link rel="preload" href={inter400} as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href={inter600} as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href={lora400} as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href={lora600} as="font" type="font/woff2" crossorigin/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -83,7 +78,6 @@ const { title, description, image = "/favicon-light.svg" } = Astro.props;
   function init() {
     preloadTheme();
     onScroll();
-    animate();
 
     const backToTop = document.getElementById("back-to-top");
     backToTop?.addEventListener("click", (event) => scrollToTop(event));
@@ -118,16 +112,6 @@ const { title, description, image = "/favicon-light.svg" } = Astro.props;
     );
 
     document.addEventListener("scroll", onScroll);
-  }
-
-  function animate() {
-    const animateElements = document.querySelectorAll(".animate");
-
-    animateElements.forEach((element, index) => {
-      setTimeout(() => {
-        element.classList.add("show");
-      }, index * 150);
-    });
   }
 
   function onScroll() {
