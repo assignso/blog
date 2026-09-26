@@ -33,8 +33,8 @@
 
 #cc-main .cm--cloud .cm__body {
   align-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 #cc-main .cm__texts {
@@ -46,9 +46,9 @@
 }
 
 #cc-main .cm__texts::before {
-  width: 2.5rem;
-  height: 2.5rem;
-  flex: 0 0 2.5rem;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
   border-radius: 9999px;
   background-color: #f5f5f5;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23171717' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5'/%3E%3Cpath d='M8.5 8.5v.01M16 15.5v.01M12 12v.01M11 17v.01M7 14v.01'/%3E%3C/svg%3E");
@@ -75,8 +75,8 @@
 #cc-main .cm__desc {
   padding: 0;
   color: #737373;
-  font-size: 1.125rem;
-  line-height: 1.55;
+  font-size: 0.875rem;
+  line-height: 1.5;
   overflow-wrap: anywhere;
 }
 
@@ -108,7 +108,7 @@
 #cc-main .cm__btn {
   min-height: 2.5rem;
   margin: 0 !important;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 500;
@@ -189,8 +189,8 @@ html.dark #cc-main .cm__btn[data-role="show"] {
 
   #cc-main .cm--cloud .cm__body {
     align-items: stretch;
-    gap: 1rem;
-    padding: 1.5rem 1.25rem !important;
+    gap: 0.75rem;
+    padding: 1rem !important;
   }
 
   #cc-main .cm__texts {
@@ -199,7 +199,7 @@ html.dark #cc-main .cm__btn[data-role="show"] {
 
   #cc-main .cm__desc {
     padding: 0 !important;
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 
   #cc-main .cm--cloud .cm__btns {
@@ -236,15 +236,18 @@ html.dark #cc-main .cm__btn[data-role="show"] {
 
   #cc-main .cm__btn-group:first-child {
     width: 100%;
+    flex-direction: column !important;
+    align-items: stretch;
   }
 
   #cc-main .cm__btn-group:first-child .cm__btn {
-    flex: 1 1 0 !important;
+    flex: 0 0 auto !important;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #cc-main .cm__btn {
+  #cc-main .cm__btn,
+  #cc-main .cc--anim .cm__btn {
     transition-duration: 0s;
   }
 }
