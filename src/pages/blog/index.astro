@@ -7,12 +7,13 @@ import { BLOG } from "@consts";
 import { getPublishedPosts } from "@lib/posts";
 
 const data = await getPublishedPosts();
+const welcome = data.find(post => post.data.slug === "welcome-to-the-assign-blog");
   
 type Acc = {
   [year: string]: CollectionEntry<"posts">[];
 }
 
-const posts = data.reduce((acc: Acc, post) => {
+const posts = data.filter(post => post !== welcome).reduce((acc: Acc, post) => {
     const year = post.data.date.getFullYear().toString();
     if (!acc[year]) {
       acc[year] = [];
@@ -31,6 +32,11 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
         Blog
       </h1>
       <div class="space-y-4">
+        {welcome && (
+          <ul class="animate flex flex-col gap-4">
+            <li><ArrowCard entry={welcome}/></li>
+          </ul>
+        )}
         {years.map(year => (
           <section class="animate space-y-4">
             <h2 class="font-semibold text-foreground">

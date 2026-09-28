@@ -31,7 +31,9 @@ const changelog = defineCollection({
   }),
   schema: z.object({
     title: z.string().min(1).max(100),
+    version: z.string().regex(/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/),
     summary: z.string().min(1).max(360),
+    changes: z.array(z.string().min(1).max(200)).max(8).default([]),
     date: z.coerce.date(),
     draft: z.boolean().default(false),
     link: z.object({

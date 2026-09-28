@@ -31,8 +31,16 @@ const updates = await getPublishedProductUpdates();
               <article class="space-y-2">
                 <h2 class="text-base font-semibold text-foreground">
                   {update.data.title}
+                  <span class="ml-2 text-sm font-normal text-muted-foreground">
+                    Version {update.data.version}
+                  </span>
                 </h2>
                 <p>{update.data.summary}</p>
+                {update.data.changes.length > 0 && (
+                  <ul class="list-disc space-y-1 pl-5">
+                    {update.data.changes.map((change) => <li>{change}</li>)}
+                  </ul>
+                )}
                 {update.data.link && (
                   <p>
                     <Link href={update.data.link.href} external>
