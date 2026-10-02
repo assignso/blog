@@ -1,6 +1,6 @@
 # Assign Blog agent rules
 
-- Follow the workspace rules and
+- Follow the [workspace rules](../architecture/operations/workspace-agent-rules.md) and
   [`architecture/operations/developer-publication.md`](../architecture/operations/developer-publication.md)
   before changing public content, navigation, metadata, or publication behavior.
 - Preserve the static, accessible, low-cost Astro/GitHub Pages boundary and the
