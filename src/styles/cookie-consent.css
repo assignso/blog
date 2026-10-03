@@ -1,7 +1,7 @@
 #cc-main {
   --cc-font-family: "Geist Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
   --cc-modal-border-radius: 0.75rem;
-  --cc-btn-border-radius: 9999px;
+  --cc-btn-border-radius: 0.5rem;
   --cc-bg: #ffffff;
   --cc-primary-color: #171717;
   --cc-secondary-color: #737373;
@@ -21,9 +21,9 @@
 }
 
 #cc-main .cm.cm--cloud {
-  right: max(1rem, calc((100vw - 80rem) / 2 + 1rem));
+  right: max(1rem, calc((100vw - 60rem) / 2));
   bottom: calc(1.5rem + env(safe-area-inset-bottom));
-  left: max(1rem, calc((100vw - 80rem) / 2 + 1rem));
+  left: max(1rem, calc((100vw - 60rem) / 2));
   width: auto;
   max-width: none;
   border: 1px solid #e5e5e5;
@@ -106,10 +106,10 @@
 }
 
 #cc-main .cm__btn {
-  min-height: 2.5rem;
+  min-height: 2.25rem;
   margin: 0 !important;
-  padding: 0.5rem 0.75rem;
-  border-radius: 9999px;
+  padding: 0.375rem 0.625rem;
+  border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
@@ -126,8 +126,8 @@
 }
 
 #cc-main .cm__btn[data-role="show"] {
-  width: 2.5rem;
-  min-width: 2.5rem;
+  width: 2.25rem;
+  min-width: 2.25rem;
   padding: 0;
   color: transparent;
   background-color: transparent;
@@ -248,6 +248,6 @@ html.dark #cc-main .cm__btn[data-role="show"] {
 @media (prefers-reduced-motion: reduce) {
   #cc-main .cm__btn,
   #cc-main .cc--anim .cm__btn {
-    transition-duration: 0s;
+    transition-duration: 0s !important;
   }
 }
