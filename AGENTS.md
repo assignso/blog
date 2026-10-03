@@ -14,10 +14,12 @@
 - After that gate, every public production deployment with a meaningful
   user-visible improvement gets one hand-written entry under
   `content/changelog/`. Follow the workspace
-  [release changelog gate](../architecture/operations/deployment-guide.md#public-production-release-changelog-gate):
-  aggregate the work since the last deployment, write the entry before
-  deploying, commit it with `draft: true` and a passing build, and set
-  `draft: false` only after the deployment is verified live. Planned, partial,
+  [post-deployment maintenance](../architecture/operations/deployment-guide.md#public-production-release-changelog-maintenance):
+  after verified deployment, before closing the session, aggregate the actual
+  released work, write/review the entry manually, then build and publish under
+  existing authority. Missing entries are advisory follow-ups and never block
+  product deployment or session closure. Drafts are optional editorial preparation.
+  Set `draft: false` only for verified-live behavior. Planned, partial,
   rolled-back, internal-only, or unsupported work is never published.
 - Every entry carries `version`, the public `assign-web` SemVer without a `v`
   prefix, and a `changes` list of short user-facing lines alongside `summary`.

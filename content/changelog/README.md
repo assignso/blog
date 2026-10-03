@@ -5,9 +5,11 @@ The public changelog starts after the first verified production deployment of
 user-visible product update. A product deployment is the evidence gate; this
 directory does not define whether a feature is released.
 
-Write each entry by hand before the production deployment and commit it with
-`draft: true`; set `draft: false` only after the deployment is verified. See the
-[release changelog gate](../../../architecture/operations/deployment-guide.md#public-production-release-changelog-gate).
+Write and review each entry by hand after verified deployment, before closing
+the session. Publish under existing authority with `draft: false`; optional
+editorial drafts use `draft: true`. Missing entries are advisory follow-ups,
+never product deployment or session-closure blockers. See
+[post-deployment maintenance](../../../architecture/operations/deployment-guide.md#public-production-release-changelog-maintenance).
 Use lowercase kebab-case filenames (`YYYY-MM-DD-short-title.md`) and this front
 matter:
 
