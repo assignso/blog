@@ -1,7 +1,7 @@
 ---
 title: "Welcome to the Assign blog"
 description: "A home for product updates, engineering notes, and practical ideas about making progress."
-date: 2026-08-22
+date: 2026-08-21
 slug: welcome-to-the-assign-blog
 tags:
   - assign

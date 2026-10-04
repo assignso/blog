@@ -98,6 +98,28 @@ for (const link of [...rss.matchAll(/<link>([^<]+)<\/link>/g)].map((match) => ma
 }
 if (rss.includes("<content:encoded")) fail("RSS must remain excerpt-only and must not embed article bodies");
 
+const rssItems = [...rss.matchAll(/<item>([\s\S]*?)<\/item>/gi)].map((match) => ({
+  date: new Date(match[1].match(/<pubDate>([^<]+)<\/pubDate>/i)?.[1] ?? ""),
+  link: match[1].match(/<link>([^<]+)<\/link>/i)?.[1],
+}));
+for (let index = 1; index < rssItems.length; index += 1) {
+  if (rssItems[index - 1].date.valueOf() < rssItems[index].date.valueOf()) {
+    fail("RSS posts must remain ordered newest first by date");
+    break;
+  }
+}
+
+if (rssItems.at(-1)?.link !== `${origin}/blog/welcome-to-the-assign-blog/`) {
+  fail("the welcome article must remain the earliest published post");
+}
+
+const blogIndex = readFileSync(join(output, "blog/index.html"), "utf8");
+const blogPostPaths = [...blogIndex.matchAll(/href=["'](\/blog\/[a-z0-9-]+)\/?["']/gi)]
+  .map((match) => match[1]);
+if (blogPostPaths.at(-1) !== "/blog/welcome-to-the-assign-blog") {
+  fail("the blog index must show the welcome article last");
+}
+
 const sitemap = builtFiles
   .filter((file) => /^sitemap.*\.xml$/.test(relative(output, file)))
   .map((file) => readFileSync(file, "utf8"))
