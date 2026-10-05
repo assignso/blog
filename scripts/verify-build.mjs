@@ -109,15 +109,30 @@ for (let index = 1; index < rssItems.length; index += 1) {
   }
 }
 
-if (rssItems.at(-1)?.link !== `${origin}/blog/welcome-to-the-assign-blog/`) {
-  fail("the welcome article must remain the earliest published post");
-}
-
-const blogIndex = readFileSync(join(output, "blog/index.html"), "utf8");
-const blogPostPaths = [...blogIndex.matchAll(/href=["'](\/blog\/[a-z0-9-]+)\/?["']/gi)]
+const welcomePath = "/blog/welcome-to-the-assign-blog";
+const postPaths = (html) => [...html.matchAll(/href=["'](\/blog\/[a-z0-9-]+)\/?["']/gi)]
   .map((match) => match[1]);
-if (blogPostPaths.at(-1) !== "/blog/welcome-to-the-assign-blog") {
-  fail("the blog index must show the welcome article last");
+const welcomePublished = existsSync(join(output, "blog/welcome-to-the-assign-blog/index.html"));
+if (welcomePublished) {
+  const homePaths = postPaths(readFileSync(join(output, "index.html"), "utf8"));
+  if (homePaths[0] !== welcomePath) fail("the homepage must show the welcome article first");
+  if (homePaths.filter((path) => path === welcomePath).length !== 1) {
+    fail("the homepage must link the welcome article once");
+  }
+
+  const blogPostPaths = postPaths(readFileSync(join(output, "blog/index.html"), "utf8"));
+  if (blogPostPaths[0] !== welcomePath) fail("the blog index must show the welcome article first");
+  if (blogPostPaths.filter((path) => path === welcomePath).length !== 1) {
+    fail("the blog index must link the welcome article once");
+  }
+
+  const welcomeRss = rssItems.find((item) => item.link === `${origin}${welcomePath}/`);
+  const newerThanWelcome = welcomeRss
+    ? rssItems.some((item) => item.date.valueOf() > welcomeRss.date.valueOf())
+    : false;
+  if (newerThanWelcome && rssItems[0]?.link === `${origin}${welcomePath}/`) {
+    fail("RSS must stay chronological and must not pin the welcome article first");
+  }
 }
 
 const sitemap = builtFiles
