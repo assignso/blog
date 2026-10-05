@@ -1,7 +1,7 @@
 #cc-main {
   --cc-font-family: "Geist Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
   --cc-modal-border-radius: 0.75rem;
-  --cc-btn-border-radius: 0.5rem;
+  --cc-btn-border-radius: var(--radius, 0.625rem);
   --cc-bg: #ffffff;
   --cc-primary-color: #171717;
   --cc-secondary-color: #737373;
@@ -109,7 +109,7 @@
   min-height: 2.25rem;
   margin: 0 !important;
   padding: 0.375rem 0.625rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius, 0.625rem);
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
