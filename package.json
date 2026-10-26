@@ -5,7 +5,7 @@
   "private": true,
   "packageManager": "pnpm@9.15.9",
   "engines": {
-    "node": ">=22.22.0"
+    "node": ">=22.23.4"
   },
   "scripts": {
     "dev": "astro dev",
@@ -19,30 +19,29 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@astrojs/mdx": "^8.1.0",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/mdx": "^8.1.1",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
-    "@fontsource/inter": "^5.0.17",
-    "@fontsource/lora": "^5.0.16",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/lora": "^5.3.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
-    "astro": "^7.4.0",
-    "clsx": "^2.1.0",
-    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "astro": "^7.4.2",
+    "clsx": "^2.1.1",
+    "eslint": "^8.57.1",
     "eslint-plugin-astro": "^0.32.0",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "sharp": "^0.35.4",
-    "tailwind-merge": "^2.2.2",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "sharp": "^0.35.5",
+    "tailwind-merge": "^2.6.1",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.4.2",
+    "typescript": "^5.9.3",
     "vanilla-cookieconsent": "^3.1.0"
   },
   "pnpm": {
     "overrides": {
-      "fast-uri": "3.1.6",
       "js-yaml": "4.3.2",
       "svgo": "4.1.0"
     }
