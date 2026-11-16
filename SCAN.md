@@ -15,7 +15,11 @@ dependencies:
 maintain:
   - path: .
     manager: pnpm
-    update: pnpm update <package>
+    update:
+      - pnpm update <package>
+    sources:
+      - https://github.com/pnpm/pnpm/releases
+      - https://pnpm.io/9.x/cli/update
 ---
 
 # Dependency watch
