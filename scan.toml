@@ -1,0 +1,14 @@
+# Dependency watch for blog
+
+[dependencies]
+astro = "https://github.com/withastro/astro/releases"
+tailwind-css = "https://github.com/tailwindlabs/tailwindcss/releases"
+sharp = "https://sharp.pixelplumbing.com/changelog/"
+nodejs = "https://nodejs.org/en/about/previous-releases"
+pnpm = "https://github.com/pnpm/pnpm/releases"
+github-actions = "https://github.blog/changelog/label/actions/"
+
+[maintain]
+manager = "pnpm"
+command = "pnpm update <package>"
+sources = ["https://github.com/pnpm/pnpm/releases", "https://pnpm.io/9.x/cli/update"]
