@@ -12,6 +12,10 @@ dependencies:
     url: https://github.com/pnpm/pnpm/releases
   - name: GitHub Actions
     url: https://github.blog/changelog/label/actions/
+maintain:
+  - path: .
+    manager: pnpm
+    update: pnpm update <package>
 ---
 
 # Dependency watch
