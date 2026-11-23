@@ -8,6 +8,10 @@ nodejs = "https://nodejs.org/en/about/previous-releases"
 pnpm = "https://github.com/pnpm/pnpm/releases"
 github-actions = "https://github.blog/changelog/label/actions/"
 
+[watch]
+managed = ["astro", "tailwind-css", "sharp"]
+external = ["nodejs", "pnpm", "github-actions"]
+
 [maintain]
 manager = "pnpm"
 command = "pnpm update <package>"
